@@ -1,7 +1,7 @@
-import { useGLTF } from '@react-three/drei'
+﻿import { useGLTF } from '@react-three/drei'
 
 export default function Model({ sleeve, neck, pocket }) {
-  const { scene } = useGLTF('/001.glb')
+  const { scene } = useGLTF('/jacket.glb')
 
   scene.traverse((child) => {
     if (child.isMesh) {
