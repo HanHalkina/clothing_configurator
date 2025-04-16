@@ -39,7 +39,7 @@ function App() {
           <label>Y Position: {yPos.toFixed(2)}</label>
           <input
             type="range"
-            min="-3"
+            min="-10"
             max="3"
             step="0.1"
             value={yPos}
