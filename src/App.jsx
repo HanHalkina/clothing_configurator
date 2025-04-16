@@ -23,15 +23,27 @@ function App() {
   </button>
 </div>
 
-      <Canvas
+     <Canvas
   camera={{ position: [0, 1.5, 3], fov: 50 }}
-  style={{ background: '#646464' }}
+  style={{ background: '#f0f0f0' }} // светло-серый фон
+  shadows
 >
-  <ambientLight intensity={0.8} />
-  <Environment preset="sunset" />
+  {/* Мягкий студийный свет */}
+  <ambientLight intensity={0.6} />
+  <directionalLight
+    position={[2, 4, 2]}
+    intensity={1}
+    castShadow
+    shadow-mapSize-width={1024}
+    shadow-mapSize-height={1024}
+    shadow-bias={-0.0001}
+  />
+
+  <Environment preset="studio" />
   <OrbitControls />
   <Model sleeve={sleeve} neck={neck} pocket={pocket} />
 </Canvas>
+
 
     </>
   )
