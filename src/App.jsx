@@ -12,6 +12,10 @@ function App() {
   return (
     <>
       <div style={{ position: 'absolute', zIndex: 1, padding: 10 }}>
+      <div style={{ background: 'red', padding: '10px', color: 'white' }}>
+  🧪 Проверка интерфейса: этот блок должен быть виден
+</div>
+
   <button onClick={...}>Toggle Sleeve</button>
   <button onClick={...}>Toggle Neck</button>
   <button onClick={...}>Toggle Pocket</button>
