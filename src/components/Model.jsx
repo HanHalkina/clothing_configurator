@@ -1,25 +1,20 @@
 ﻿import { useGLTF } from '@react-three/drei'
 import { useEffect } from 'react'
 
-export default function Model({ sleeve, neck, pocket }) {
+export default function Model() {
   const { scene } = useGLTF('/model.glb')
 
-  scene.traverse((child) => {
-    if (child.isMesh) {
-      child.visible = false
-    }
-  })
+  useEffect(() => {
+    console.log('✅ Модель загружена:', scene)
 
-  const show = (name) => {
-    const part = scene.getObjectByName(name)
-    if (part) part.visible = true
-    else console.warn(`🚫 Не найден меш: ${name}`)
-  }
-
-  show("vaist.001")
-  show(sleeve)          // "long_sleeve" или "short_sleeve"
-  show(neck)            // "v-neck" или "polo.001"
-  if (pocket) show("pocket")
+    scene.traverse((child) => {
+      if (child.isMesh) {
+        console.log('🎯 Найден меш:', child.name)
+        child.visible = true // временно включаем всё!
+      }
+    })
+  }, [scene])
 
   return <primitive object={scene} />
 }
+
