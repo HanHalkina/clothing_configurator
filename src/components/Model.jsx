@@ -1,8 +1,20 @@
 ﻿import { useGLTF } from '@react-three/drei'
+import { useEffect } from 'react'
 
 export default function Model({ sleeve, neck, pocket }) {
-  const { scene } = useGLTF('/jacket.glb')
+  const { scene } = useGLTF('/model.glb')
 
+
+  useEffect(() => {
+    console.log('▶️ SCENE:', scene)
+    scene.traverse((child) => {
+      if (child.isMesh) {
+        console.log('🎯 Mesh:', child.name)
+      }
+    })
+  }, [scene])
+
+  // остальная часть без изменений
   scene.traverse((child) => {
     if (child.isMesh) {
       child.visible = false
@@ -12,6 +24,7 @@ export default function Model({ sleeve, neck, pocket }) {
   const show = (name) => {
     const part = scene.getObjectByName(name)
     if (part) part.visible = true
+    else console.warn(`🚨 Меш "${name}" не найден`)
   }
 
   show("vaist")
