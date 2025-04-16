@@ -1,4 +1,4 @@
-import { Canvas } from '@react-three/fiber'
+﻿import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Environment } from '@react-three/drei'
 import Model from './components/Model'
 import { useState } from 'react'
@@ -25,7 +25,7 @@ function App() {
         <ambientLight intensity={0.8} />
         <Environment preset="sunset" />
         <OrbitControls />
-        <Model sleeve={sleeve} neck={neck} pocket={pocket} />
+        <Model sleeve="long_sleeve" neck="v-neck" pocket={true} />
       </Canvas>
     </>
   )
