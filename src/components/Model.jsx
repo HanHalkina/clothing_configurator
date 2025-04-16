@@ -21,7 +21,7 @@ export default function Model({ sleeve, neck, pocket }) {
   }, [scene, sleeve, neck, pocket])
 
   return (
-   <group scale={[0.05, 0.05, 0.05]} position={[0, -7, 0]}>
+   <group scale={[0.03, 0.03, 0.03]} position={[0, -5, 0]}>
       <primitive object={scene} />
     </group>
   )
