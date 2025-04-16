@@ -10,25 +10,18 @@ function App() {
 
   return (
     <>
-      <div style={{
-        position: 'absolute',
-        top: 10,
-        left: 10,
-        zIndex: 10,
-        background: 'white',
-        padding: 10,
-        borderRadius: 8
-      }}>
-        <button onClick={() => setSleeve(sleeve === "long_sleeve" ? "short_sleeve" : "long_sleeve")}>
-          Toggle Sleeve
-        </button>
-        <button onClick={() => setNeck(neck === "v-neck" ? "polo" : "v-neck")}>
-          Toggle Neck
-        </button>
-        <button onClick={() => setPocket(!pocket)}>
-          Toggle Pocket
-        </button>
-      </div>
+      
+      <div className="ui-panel">
+  <button onClick={() => setSleeve(sleeve === "long_sleeve" ? "short_sleeve" : "long_sleeve")}>
+    Toggle Sleeve
+  </button>
+  <button onClick={() => setNeck(neck === "v-neck" ? "polo" : "v-neck")}>
+    Toggle Neck
+  </button>
+  <button onClick={() => setPocket(!pocket)}>
+    Toggle Pocket
+  </button>
+</div>
 
       <Canvas camera={{ position: [0, 1.5, 3], fov: 50 }}>
         <ambientLight intensity={0.8} />
