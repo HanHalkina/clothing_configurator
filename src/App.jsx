@@ -8,6 +8,8 @@ function App() {
   const [neck, setNeck] = useState("v-neck")
   const [pocket, setPocket] = useState(true)
   const [scale, setScale] = useState(0.1)
+  const [yPos, setYPos] = useState(0) // новое состояние для оси Y
+
 
   return (
     <>
@@ -30,15 +32,24 @@ function App() {
     step="0.01"
     value={scale}
     onChange={(e) => setScale(parseFloat(e.target.value))}
+  <div style={{ marginTop: 10 }}>
+  <label>Y Position: {yPos.toFixed(2)}</label>
+  <input
+    type="range"
+    min="-3"
+    max="3"
+    step="0.1"
+    value={yPos}
+    onChange={(e) => setYPos(parseFloat(e.target.value))}
   />
 </div>
-
 
       <Canvas camera={{ position: [0, 1.5, 3], fov: 50 }}>
         <ambientLight intensity={0.8} />
         <Environment preset="sunset" />
         <OrbitControls />
-        <Model sleeve={sleeve} neck={neck} pocket={pocket} scale={scale} />
+        <Model sleeve={sleeve} neck={neck} pocket={pocket} scale={scale} yPos={yPos} />
+
       </Canvas>
     </>
   )
