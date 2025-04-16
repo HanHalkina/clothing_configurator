@@ -1,7 +1,7 @@
 ﻿import { useGLTF } from '@react-three/drei'
 import { useEffect } from 'react'
 
-export default function Model({ sleeve, neck, pocket, scale, yPos }) {
+export default function Model({ sleeve, neck, pocket }) {
   const { scene } = useGLTF('/model.glb')
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function Model({ sleeve, neck, pocket, scale, yPos }) {
   }, [scene, sleeve, neck, pocket])
 
   return (
-    <group scale={[scale, scale, scale]} position={[0, yPos, 0]}>
+    <group scale={[0.1, 0.1, 0.1]} position={[0, -15, 0]}>
       <primitive object={scene} />
     </group>
   )

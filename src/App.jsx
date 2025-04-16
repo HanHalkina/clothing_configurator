@@ -52,7 +52,7 @@ function App() {
         <ambientLight intensity={0.8} />
         <Environment preset="sunset" />
         <OrbitControls />
-        <Model sleeve={sleeve} neck={neck} pocket={pocket} scale={scale} yPos={yPos} />
+        <Model sleeve={sleeve} neck={neck} pocket={pocket}  />
       </Canvas>
     </>
   )
