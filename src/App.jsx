@@ -12,27 +12,23 @@ function App() {
   return (
     <>
       <div style={{ position: 'absolute', zIndex: 1, padding: 10 }}>
-        <button onClick={() => setSleeve(sleeve === "long_sleeve" ? "short_sleeve" : "long_sleeve")}>
-          Toggle Sleeve
-        </button>
-        <button onClick={() => setNeck(neck === "v-neck" ? "polo" : "v-neck")}>
-          Toggle Neck
-        </button>
-        <button onClick={() => setPocket(!pocket)}>
-          Toggle Pocket
-        </button>
-        <div style={{ marginTop: 10 }}>
-          <label>Scale: {scale.toFixed(2)}</label>
-          <input
-            type="range"
-            min="0.01"
-            max="1"
-            step="0.01"
-            value={scale}
-            onChange={(e) => setScale(parseFloat(e.target.value))}
-          />
-        </div>
-      </div>
+  <button onClick={...}>Toggle Sleeve</button>
+  <button onClick={...}>Toggle Neck</button>
+  <button onClick={...}>Toggle Pocket</button>
+
+  <div style={{ marginTop: 10 }}>
+    <label>Scale: {scale.toFixed(2)}</label>
+    <input
+      type="range"
+      min="0.01"
+      max="1"
+      step="0.01"
+      value={scale}
+      onChange={(e) => setScale(parseFloat(e.target.value))}
+    />
+  </div>
+</div>
+
       <Canvas camera={{ position: [0, 1.5, 3], fov: 50 }}>
         <ambientLight intensity={0.8} />
         <Environment preset="sunset" />
