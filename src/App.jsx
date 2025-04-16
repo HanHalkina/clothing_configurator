@@ -23,12 +23,16 @@ function App() {
   </button>
 </div>
 
-      <Canvas camera={{ position: [0, 1.5, 3], fov: 50 }}>
-        <ambientLight intensity={0.8} />
-        <Environment preset="sunset" />
-        <OrbitControls />
-        <Model sleeve={sleeve} neck={neck} pocket={pocket} />
-      </Canvas>
+      <Canvas
+  camera={{ position: [0, 1.5, 3], fov: 50 }}
+  style={{ background: '#646464' }}
+>
+  <ambientLight intensity={0.8} />
+  <Environment preset="sunset" />
+  <OrbitControls />
+  <Model sleeve={sleeve} neck={neck} pocket={pocket} />
+</Canvas>
+
     </>
   )
 }
